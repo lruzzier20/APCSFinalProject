@@ -5,3 +5,7 @@ Shooter player;
 void setup(){
   size(672,768);
 }
+
+void keyPressed(){
+  
+}
