@@ -9,8 +9,12 @@ public class Shooter{
   }
   
   void move(){
-  if(movingLeft){x-=dx;}
-  if(movingRight){x+=dx;}
+    if(movingLeft){x-=dx;}
+    if(movingRight){x+=dx;}
   }
   
+  void display(){
+    stroke(0);
+    fill(
+  }
 }
