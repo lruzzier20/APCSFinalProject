@@ -1,6 +1,12 @@
 public abstract class Cow{
-  protected double x;
-  protected double y;
+  protected float x;
+  protected float y;
+  protected boolean isFriendly;
+  
+  public Cow(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
   
   public void animate(){
     move();
