@@ -3,9 +3,10 @@ public abstract class Cow{
   protected float y;
   protected boolean isFriendly;
   
-  public Cow(int x, int y){
+  public Cow(int x, int y, boolean isFriendly){
     this.x = x;
     this.y = y;
+    this.isFriendly = isFriendly;
   }
   
   public void animate(){

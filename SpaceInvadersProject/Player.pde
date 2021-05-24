@@ -2,7 +2,7 @@ public class Player extends Entity{
   private int speed = 5;
   
   public Player(){
-    super(100,100);
+    super(100,100,true);
   }
   
   protected void figure(){
