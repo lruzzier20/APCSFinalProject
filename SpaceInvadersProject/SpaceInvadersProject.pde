@@ -14,8 +14,8 @@ void draw(){
 }
 
 void keyPressed(){
-  boolean right = key == 97;
-  boolean left = key == 115;
+  boolean right = key == 'a';
+  boolean left = key == 's';
   player.moveKey(left,right);
 }
 
