@@ -3,6 +3,7 @@ Shooter player;
 //ArrayList<Barrier> walls;
 
 void setup(){
+  background(0);
   size(672,768);
 }
 
