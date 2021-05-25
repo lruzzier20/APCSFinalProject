@@ -5,6 +5,7 @@ public class Player extends Entity{
   
   public Player(){
     super(100,(height-100),true);
+    super.rateLimit = 1000;
   }
   
   protected void figure(){
