@@ -6,3 +6,6 @@ We plan to recreate the original 1978 Space Invaders arcade cabinet shooter game
 Git Development Log:
 5/24/21:
 Got together to talk about the project structure and UML setup that has been implemented so far. Gave each other tasks like figuring out invader movement and projectiles.
+
+5/25/21:
+Ish: Worked on motion for player and projectiles. Also created a system of tracking game attributes through Game class; currently game class manages player movement and keypresses
