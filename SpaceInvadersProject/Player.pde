@@ -4,7 +4,7 @@ public class Player extends Entity{
   
   
   public Player(){
-    super(100,100,true);
+    super(100,(height-100),true);
   }
   
   protected void figure(){

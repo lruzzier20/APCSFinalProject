@@ -18,6 +18,9 @@ void keyPressed(){
   boolean left = key == 's';
   player.moveKey(left,right);
   
+  if(key == ' '){
+    player.fire();
+  }
 }
 
 void reset(){
