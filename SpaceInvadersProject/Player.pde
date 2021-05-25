@@ -1,5 +1,5 @@
 public class Player extends Entity{
-  private int speed = 100;
+  private int speed = 10;
   private int size = 100;
   
   
