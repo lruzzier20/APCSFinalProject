@@ -3,7 +3,7 @@ public abstract class Cow{
   protected float y;
   protected boolean isFriendly;
   
-  public Cow(int x, int y, boolean isFriendly){
+  public Cow(float x, float y, boolean isFriendly){
     this.x = x;
     this.y = y;
     this.isFriendly = isFriendly;

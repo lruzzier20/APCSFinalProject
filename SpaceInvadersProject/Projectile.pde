@@ -1,6 +1,6 @@
 public class Projectile extends Cow{
   int speed = 10;
-  public Projectile(int x,int y,boolean isFriendly){
+  public Projectile(float x,float y,boolean isFriendly){
     super(x,y,isFriendly);
   }
   

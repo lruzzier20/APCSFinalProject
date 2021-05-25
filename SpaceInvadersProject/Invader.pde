@@ -4,7 +4,7 @@ public class Invader extends Entity{
   private int size=10;
   
   public Invader(){
-    super(50,50);
+    super(50,50,false);
   }
   
   public void figure(){

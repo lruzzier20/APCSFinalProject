@@ -10,9 +10,14 @@ public class Player extends Entity{
   protected void figure(){
     rect(super.x,super.y,size,size/2);
   }
+  
   protected void move(){
-    if(x<=0){super.x=0;}
+    if(x<0){super.x=0;}
     if(x+size>=width){super.x=width-size;}
+    
+    for(int rocket = 0; rocket < super.currentFired.size();rocket++){
+      currentFired.get(rocket).animate();
+    }
   }
   
   public void moveKey(boolean left, boolean right){

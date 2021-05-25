@@ -17,6 +17,7 @@ void keyPressed(){
   boolean right = key == 'a';
   boolean left = key == 's';
   player.moveKey(left,right);
+  
 }
 
 void reset(){

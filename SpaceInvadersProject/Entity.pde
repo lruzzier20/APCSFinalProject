@@ -1,12 +1,12 @@
 public abstract class Entity extends Cow{
   protected int lives;
-  
-  public Entity(int x,int y,boolean isFriendly){
+  protected ArrayList<Projectile> currentFired = new ArrayList<Projectile>();
+  public Entity(float x,float y,boolean isFriendly){
     super(x,y,isFriendly);
   }
   
   public void fire(){
-    
+    currentFired.add(new Projectile(super.x,super.y,super.isFriendly));
   }
   
 }
