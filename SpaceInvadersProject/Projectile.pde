@@ -4,6 +4,7 @@ public class Projectile extends Cow{
     super(x,y,isFriendly);
   }
   
+  //moves up or down depending on who shot it
   public void move(){
     if(isFriendly){
       y -= 10;
@@ -15,6 +16,11 @@ public class Projectile extends Cow{
   
   public void figure(){
     rect(x,y,3,3);
+  }
+  
+  //checks if out of bounds
+  public boolean dead(){
+    return y < 0 || y > height;
   }
   
 }

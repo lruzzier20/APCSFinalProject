@@ -4,7 +4,7 @@ public class Player extends Entity{
   
   
   public Player(){
-    super(100,(height-100),true);
+    super(100,(height-25),true);
     super.rateLimit = 1000;
   }
   
@@ -17,11 +17,10 @@ public class Player extends Entity{
     if(x-size/2<0){super.x=0+size/2;}
     if(x+size/2>=width){super.x=width-size/2;}
     
-    for(int rocket = 0; rocket < super.currentFired.size();rocket++){
-      currentFired.get(rocket).animate();
-    }
+    rocketUse();
   }
   
+  //input left and right boolean and player moves accordingly
   public void moveKey(boolean left, boolean right){
     if(left) super.x += speed;
     if(right) super.x += -speed;
