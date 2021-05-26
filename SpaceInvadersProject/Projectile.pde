@@ -21,6 +21,7 @@ public class Projectile extends Cow{
       Cow current = others.get(other);
       if(current.isFriendly != this.isFriendly && current.inArea(super.x,super.y)){
         attack(current);
+        others.remove(current);
         return;
       }
     }

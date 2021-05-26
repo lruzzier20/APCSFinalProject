@@ -6,8 +6,9 @@ ArrayList<Swarm> enemies;
 void setup(){
   background(0);
   size(672,768);
-  game = new Game(player);
+  game = new Game();
   player = new Player(game);
+  game.setPlayer(player);
   enemies = new ArrayList<Swarm>();
   enemies.add(new Swarm(game));
   enemies.get(0).addMember(10,10);

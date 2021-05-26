@@ -10,6 +10,12 @@ public class Game{
     this.player = player;
   }
   
+  public Game(){
+  }
+  
+  public void setPlayer(Player player){
+    this.player = player;
+  }
   //This is the command that's going to be called in the draw loop
   public void run(){
     playerMovement();
