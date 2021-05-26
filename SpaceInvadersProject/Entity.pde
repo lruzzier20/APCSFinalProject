@@ -21,7 +21,7 @@ public abstract class Entity extends Cow{
   //loops through the rockets and makes sure they get animated
     for(int rocket = 0; rocket < currentFired.size();rocket++){
       Projectile current = currentFired.get(rocket);
-      if(current.dead()){
+      if(current.isDead){
         currentFired.remove(rocket);
         rocket--;
       }

@@ -12,6 +12,14 @@ public class Projectile extends Cow{
     else{
       y += 10;
     }
+    if(dead()) isDead = true;
+  }
+  
+  public void searchHits(ArrayList<Cow> others){
+    for(int other = 0; other < others.size();other++){
+      Cow current = others.get(other);
+      if(current.)
+    }
   }
   
   public void figure(){
@@ -21,6 +29,15 @@ public class Projectile extends Cow{
   //checks if out of bounds
   public boolean dead(){
     return y < 0 || y > height;
+  }
+  
+  public void hit(){
+    die();
+  }
+  
+  public void attack(Cow enemy){
+    enemy.hit();
+    this.hit();
   }
   
 }

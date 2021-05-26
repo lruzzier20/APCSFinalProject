@@ -15,6 +15,10 @@ public class Invader extends Entity{
     rect(super.x,super.y,size,size/2);
   }
   
+  public void hit(){
+    die();
+  }
+  
   public void move(){
     if(x<0){super.x=0; speed*=-1; super.y+=5;}
     else if(x+size>width){super.x=width-size; speed*=-1; super.y+=5;}

@@ -6,6 +6,7 @@ public class Player extends Entity{
   public Player(){
     super(100,(height-25),true);
     super.rateLimit = 1000;
+    super.lives = 3;
   }
   
   protected void figure(){
@@ -24,6 +25,11 @@ public class Player extends Entity{
   public void moveKey(boolean left, boolean right){
     if(left) super.x += speed;
     if(right) super.x += -speed;
+  }
+  
+  public void hit(){
+    lives--;
+    if(lives == 0) die();
   }
   
 }
