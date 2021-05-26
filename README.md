@@ -19,3 +19,6 @@ Open in processing and press run button
 * ### 5/25/21:
   * Ish: Worked on motion for player and projectiles. Also created a system of tracking game attributes through Game class; currently game class manages player movement and keypresses
   * Log: Created Invader class that will automatically move left, right, and down. Main class creates an ArrayList of these Invaders at designated positions. Coordinated "swarm" movement to follow
+
+* ### 5/26/21:
+  * Ish: Worked on projectile - cow colliisions. First I worked on methods to detect collisions and what to do in response. Then I wrote code to make the projectiles aware of other cows by using the Game class as the connection. Implemented this by passing reference to game to store all the cows and projectiles and then compared coordinates of projectiles to every element in cow, so that this way collisions can be detected.
