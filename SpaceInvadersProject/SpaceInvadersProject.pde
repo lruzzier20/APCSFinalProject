@@ -2,14 +2,14 @@
 //ArrayList<Barrier> walls;
 Player player;
 Game game;
-ArrayList<Invader> enemies;
+Swarm enemies;
 void setup(){
   background(0);
   size(672,768);
   player = new Player();
-  enemies = new ArrayList<Invader>();
-  enemies.add(new Invader(10,10));
-  enemies.add(new Invader(80,10));
+  enemies = new Swarm();
+  enemies.addMember(10,10);
+  enemies.addMember(80,10);
   game = new Game(player);
 }
 
@@ -17,9 +17,7 @@ void draw(){
   reset();
   game.run();
   player.animate();
-  for(Invader enemy : enemies){
-    enemy.animate();
-  }
+  enemies.animate();
 }
 
 void keyPressed(){
