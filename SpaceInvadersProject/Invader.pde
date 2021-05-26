@@ -16,8 +16,19 @@ public class Invader extends Entity{
   }
   
   public void move(){
-    if(x<0){super.x=0; speed*=-1; super.y+=5;}
-    else if(x+size>width){super.x=width-size; speed*=-1; super.y+=5;}
+    if(x<0){super.x=0;}
+    else if(x+size>width){super.x=width-size;}
     else {super.x+=speed;}
+  }
+  
+  public void swap(){
+    speed*=-1;
+    super.y+=5;
+  }
+  
+  public boolean bump(){
+    if(x<0){return true;}
+    if(x+size>width){return true;}
+    return false;
   }
 }
