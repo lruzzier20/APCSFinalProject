@@ -18,3 +18,4 @@ Open in processing and press run button
 
 * ### 5/25/21:
   * Ish: Worked on motion for player and projectiles. Also created a system of tracking game attributes through Game class; currently game class manages player movement and keypresses
+  * Log: Created Invader class that will automatically move left, right, and down. Main class creates an ArrayList of these Invaders at designated positions. Coordinated "swarm" movement to follow
