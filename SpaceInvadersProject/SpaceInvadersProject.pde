@@ -2,22 +2,26 @@
 //ArrayList<Barrier> walls;
 Player player;
 Game game;
-Swarm enemies;
+ArrayList<Swarm> enemies;
 void setup(){
   background(0);
   size(672,768);
-  player = new Player();
-  enemies = new Swarm();
-  enemies.addMember(10,10);
-  enemies.addMember(80,10);
   game = new Game(player);
+  player = new Player(game);
+  enemies = new ArrayList<Swarm>();
+  enemies.add(new Swarm(game));
+  enemies.get(0).addMember(10,10);
+  enemies.get(0).addMember(80,10);
 }
 
 void draw(){
   reset();
   game.run();
   player.animate();
-  enemies.animate();
+  for(int i = 0; i < enemies.size();i++){
+    enemies.get(i).animate();
+  }
+  
 }
 
 void keyPressed(){

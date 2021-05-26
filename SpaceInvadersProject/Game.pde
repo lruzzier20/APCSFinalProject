@@ -3,8 +3,9 @@
 public class Game{
   //game controls in the order of 'a', 's', and ' '
   private boolean[] controls = {false,false,false};
-  Player player;
-  
+  private Player player;
+  private ArrayList<Cow> gameCows = new ArrayList<Cow>();
+  private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
   public Game(Player player){
     this.player = player;
   }
@@ -12,6 +13,10 @@ public class Game{
   //This is the command that's going to be called in the draw loop
   public void run(){
     playerMovement();
+    for(int bullet = 0; bullet < projectiles.size();bullet++){
+      Projectile current = projectiles.get(bullet);
+      current.searchHits(gameCows);
+    }
   }
   
   /*Press and release are called whenever a key is pressed or released respectively. 
@@ -42,8 +47,22 @@ public class Game{
   }
   
   public void playerMovement(){
-    player.moveKey(controls[0],controls[1]);
+    if(player != null) player.moveKey(controls[0],controls[1]);
   }
   
+  public void addCow(Cow cow){
+    gameCows.add(cow);
+  }
   
+  public void removeCow(Cow cow){
+    gameCows.remove(cow);
+  }
+  
+  public void addBullet(Projectile cow){
+    projectiles.add(cow);
+  }
+  
+  public void removeBullet(Projectile cow){
+    projectiles.remove(cow);
+  }
 }

@@ -2,12 +2,12 @@ public class Invader extends Entity{
   private int speed=5;
   private int size=50;
   
-  public Invader(){
-    super(50,50,false);
+  public Invader(Game game){
+    super(50,50,false,game);
   }
   
-  public Invader(int x, int y){
-    super(x,y,false);
+  public Invader(int x, int y,Game game){
+    super(x,y,false,game);
   }
   
   public void figure(){
@@ -34,5 +34,10 @@ public class Invader extends Entity{
     if(x<0){return true;}
     if(x+size>width){return true;}
     return false;
+  }
+  
+  public boolean inArea(float otherX, float otherY){
+    return (otherX > super.x && otherX < super.x + size) && (otherY > super.y&& otherY < super.y + size);
+    
   }
 }

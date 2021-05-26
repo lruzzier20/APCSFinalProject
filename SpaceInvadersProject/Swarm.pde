@@ -1,7 +1,8 @@
 public class Swarm{
   private ArrayList<Invader> members;
-  
-  public Swarm(){
+  Game game;
+  public Swarm(Game game){
+    this.game = game;
     members = new ArrayList<Invader>();
   }
   
@@ -12,7 +13,7 @@ public class Swarm{
   }
   
   public void addMember(int x, int y){
-    members.add(new Invader(x,y));
+    members.add(new Invader(x,y,game));
   }
   
   public void animate(){
@@ -22,5 +23,9 @@ public class Swarm{
     for(Invader enemy : members){
       enemy.animate();
     }
+  }
+  
+  public ArrayList<Invader> members(){
+    return members;
   }
 }

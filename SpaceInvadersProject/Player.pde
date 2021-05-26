@@ -3,8 +3,8 @@ public class Player extends Entity{
   private int size = 100;
   
   
-  public Player(){
-    super(100,(height-25),true);
+  public Player(Game game){
+    super(100,(height-25),true,game);
     super.rateLimit = 1000;
     super.lives = 3;
   }
@@ -30,6 +30,11 @@ public class Player extends Entity{
   public void hit(){
     lives--;
     if(lives == 0) die();
+  }
+  
+  public boolean inArea(float otherX, float otherY){
+    return (otherX > super.x - size/2 && otherX < super.x + size/2) && (otherY > super.y - size/2 && otherY < super.y + size/2);
+    
   }
   
 }
