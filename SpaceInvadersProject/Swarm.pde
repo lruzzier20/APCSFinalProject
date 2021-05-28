@@ -28,4 +28,8 @@ public class Swarm{
   public ArrayList<Invader> members(){
     return members;
   }
+  
+  public void shoot(int i){
+    members.get(i).fire();
+  }
 }

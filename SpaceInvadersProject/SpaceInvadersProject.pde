@@ -42,6 +42,7 @@ void keyPressed(){
   
   if(key == ' '){
     player.fire();
+    enemies.shoot(1);
   }
 }
 
