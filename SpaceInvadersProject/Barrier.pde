@@ -1,5 +1,5 @@
 public class Barrier extends Cow{
-  int health = 20;
+  int health = 3;
   float size = 50;
   boolean toggleHit = false;
   public Barrier(float x, float y,Game game){
@@ -9,6 +9,7 @@ public class Barrier extends Cow{
   public void hit(){
     health--;
     toggleHit = !toggleHit;
+    kill();
     
   }
   
