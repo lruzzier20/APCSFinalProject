@@ -19,9 +19,8 @@ public class Projectile extends Cow{
   public void searchHits(ArrayList<Cow> others){
     for(int other = 0; other < others.size();other++){
       Cow current = others.get(other);
-      if(current.isFriendly != this.isFriendly && current.inArea(super.x,super.y)){
+      if(current.isFriendly != this.isFriendly && current.inArea(super.x,super.y) && current.isDead == false){
         attack(current);
-        others.remove(current);
         return;
       }
     }
