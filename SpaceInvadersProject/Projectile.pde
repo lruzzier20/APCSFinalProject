@@ -28,7 +28,7 @@ public class Projectile extends Cow{
   }
   
   public void figure(){
-    rect(x,y,size,size);
+    rect(x,y,size,size*8);
   }
   
   //checks if out of bounds
