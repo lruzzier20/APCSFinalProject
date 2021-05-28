@@ -4,7 +4,7 @@ public abstract class Entity extends Cow{
   protected long lastFired = -1;
   protected long rateLimit = 0;
   private Game game;
-  public Entity(float x,float y,boolean isFriendly, Game game){
+  public Entity(float x,float y,int isFriendly, Game game){
     super(x,y,isFriendly, game);
     this.game = game;
   }

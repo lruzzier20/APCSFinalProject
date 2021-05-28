@@ -3,11 +3,11 @@ public class Invader extends Entity{
   private int size=50;
   
   public Invader(Game game){
-    super(50,50,false,game);
+    super(50,50,0,game);
   }
   
   public Invader(int x, int y,Game game){
-    super(x,y,false,game);
+    super(x,y,0,game);
   }
   
   public void figure(){

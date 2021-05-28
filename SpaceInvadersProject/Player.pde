@@ -4,7 +4,7 @@ public class Player extends Entity{
   
   
   public Player(Game game){
-    super(100,(height-25),true,game);
+    super(100,(height-25),1,game);
     super.rateLimit = 1000;
     super.lives = 3;
   }

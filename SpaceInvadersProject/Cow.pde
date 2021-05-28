@@ -1,10 +1,10 @@
 public abstract class Cow{
   protected float x;
   protected float y;
-  protected boolean isFriendly;
+  protected int isFriendly;
   protected boolean isDead;
   //isFriendly is whether or not the Cow is allied with player or enemy; cow class also holds the coords
-  public Cow(float x, float y, boolean isFriendly, Game game){
+  public Cow(float x, float y, int isFriendly, Game game){
     this.x = x;
     this.y = y;
     this.isFriendly = isFriendly;
