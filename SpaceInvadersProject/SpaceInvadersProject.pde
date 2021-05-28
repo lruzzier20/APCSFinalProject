@@ -2,7 +2,7 @@
 //ArrayList<Barrier> walls;
 Player player;
 Game game;
-ArrayList<Swarm> enemies;
+Swarm enemies;
 ArrayList<Barrier> barriers;
 void setup(){
   background(0);
@@ -10,10 +10,8 @@ void setup(){
   game = new Game();
   player = new Player(game);
   game.setPlayer(player);
-  enemies = new ArrayList<Swarm>();
-  enemies.add(new Swarm(game));
-  enemies.get(0).addMember(10,10);
-  enemies.get(0).addMember(80,10);
+  enemies = new Swarm(game);
+  enemies.addMembers();
   barriers = new ArrayList<Barrier>();
   for(int i = 0; i < 4; i++){
     barriers.add(new Barrier((i * width/4)+50, 500, game));

@@ -1,20 +1,15 @@
 public class Barrier extends Cow{
   int health = 3;
   float size = 50;
-  int damage = 10;
   boolean toggleHit = false;
   public Barrier(float x, float y,Game game){
     super(x, y, 3, game);  
   }
   
   public void hit(){
-    health-=damage;
+    health--;
     toggleHit = !toggleHit;
-<<<<<<< HEAD
-=======
     kill();
-    
->>>>>>> 1127a239add5b6cfc61858f8cb9c875fcb1161ff
   }
   
   public void figure(){

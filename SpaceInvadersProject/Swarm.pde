@@ -12,8 +12,8 @@ public class Swarm{
     }
   }
   
-  public void addMember(int x, int y){
-    members.add(new Invader(x,y,game));
+  public void addMembers(){
+    members.add(new Invader(game));
   }
   
   public void animate(){
