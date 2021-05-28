@@ -1,5 +1,5 @@
 public class Projectile extends Cow{
-  int speed = 10;
+  int speed = 13;
   int size = 3;
   public Projectile(float x,float y,int isFriendly, Game game){
     super(x,y,isFriendly, game);
@@ -8,10 +8,10 @@ public class Projectile extends Cow{
   //moves up or down depending on who shot it
   public void move(){
     if(isFriendly == 1){
-      y -= 10;
+      y -= speed;
     }
     else{
-      y += 10;
+      y += speed;
     }
     if(dead()) isDead = true;
   }

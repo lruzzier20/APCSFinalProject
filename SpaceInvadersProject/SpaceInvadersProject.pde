@@ -16,7 +16,7 @@ void setup(){
   enemies.get(0).addMember(80,10);
   barriers = new ArrayList<Barrier>();
   for(int i = 0; i < 4; i++){
-    barriers.add(new Barrier(i * width/4, 700,game));
+    barriers.add(new Barrier((i * width/4)+50, 500, game));
   }
   
 }
