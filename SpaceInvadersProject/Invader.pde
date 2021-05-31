@@ -6,7 +6,7 @@ public class Invader extends Entity{
     super(50,50,0,game);
   }
   
-  public Invader(int x, int y,Game game){
+  public Invader(float x, float y,Game game){
     super(x,y,0,game);
   }
   
