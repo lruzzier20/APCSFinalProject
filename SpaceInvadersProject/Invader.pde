@@ -23,6 +23,7 @@ public class Invader extends Entity{
     if(x<0){super.x=0;}
     else if(x+size>width){super.x=width-size;}
     else {super.x+=speed;}
+    fire();
   }
   
   public void swap(){

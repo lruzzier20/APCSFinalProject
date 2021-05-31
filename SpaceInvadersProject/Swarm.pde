@@ -14,7 +14,6 @@ public class Swarm{
   }
   
   public void addMember(float x, float y){
-    System.out.println("called");
     members.add(new Invader(x,y,game));
   }
   
@@ -55,5 +54,8 @@ public class Swarm{
         addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r);
       }
     }
+    }
+  public void shoot(int i){
+    members.get(i).fire();
   }
 }
