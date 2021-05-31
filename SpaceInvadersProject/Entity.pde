@@ -10,19 +10,15 @@ public abstract class Entity extends Cow{
   }
   
   public void fire(){
-    //System.out.println("Attempted to fire");
     //uses time to rate limit the shooting; rate is customizable using lastFired and rateLimit
     long currentTime = System.currentTimeMillis();
     if(lastFired == -1 || currentTime - lastFired >= rateLimit){
       Projectile bullet = new Projectile(super.x,super.y,this.isFriendly,this.game);
-      System.out.println(bullet.isFriendly);
       currentFired.add(bullet);
       game.addBullet(bullet);
       lastFired = currentTime;
-      //System.out.println("Shots fired~!");
     }
     else{
-      //System.out.println("Cannon clogged!");
     }
   }
   

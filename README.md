@@ -25,4 +25,4 @@ Open in processing and press run button
   * Log: Coordinated "swarm" movement created, using a new Swarm object. This object also uses an ArrayList of Invaders like the original implementation, but simplified working with it significantly. Improvements may come in the future, if we can find a way to avoid going through so many loops.
 
 * ### 5/31/21:
-  * Ish: Managed swarm padding. Also fixed a bug where invaders would overlap and have multiple lives.
+  * Ish: Managed swarm padding. Also fixed a bug where invaders would overlap and have multiple lives. After that, I made it possible for invaders to shoot and kill the player. Invaders shoot randomly.

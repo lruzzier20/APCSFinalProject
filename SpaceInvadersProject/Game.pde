@@ -18,6 +18,7 @@ public class Game{
   }
   //This is the command that's going to be called in the draw loop
   public void run(){
+    scoreDisplay();
     playerMovement();
     for(int bullet = 0; bullet < projectiles.size();bullet++){
       Projectile current = projectiles.get(bullet);
@@ -70,5 +71,13 @@ public class Game{
   
   public void removeBullet(Projectile cow){
     projectiles.remove(cow);
+  }
+  
+  public void scoreDisplay(){
+    System.out.println(player.lives());
+  }
+  
+  public boolean gameRunning(){
+    return player.lives() > 0;
   }
 }

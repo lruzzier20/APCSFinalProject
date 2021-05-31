@@ -27,7 +27,7 @@ public class Player extends Entity{
     if(right) super.x += -speed;
   }
   
-  public void hit(){
+  protected void hit(){
     lives--;
     if(lives == 0) die();
   }
@@ -35,6 +35,10 @@ public class Player extends Entity{
   public boolean inArea(float otherX, float otherY){
     return (otherX > super.x - size/2 && otherX < super.x + size/2) && (otherY > super.y - size/2 && otherY < super.y + size/2);
     
+  }
+  
+  public int lives(){
+    return lives;
   }
   
 }
