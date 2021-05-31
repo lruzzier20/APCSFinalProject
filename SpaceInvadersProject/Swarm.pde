@@ -1,6 +1,8 @@
 public class Swarm{
   private ArrayList<Invader> members;
   private Game game;
+  private long cycleCounter = 0;
+  private long cycle = 1000;
   public Swarm(Game game){
     this.game = game;
     members = new ArrayList<Invader>();
@@ -29,6 +31,7 @@ public class Swarm{
     for(Invader enemy : members){
       enemy.animate();
     }
+    cycle();
   }
   
   public ArrayList<Invader> members(){
@@ -55,7 +58,15 @@ public class Swarm{
       }
     }
     }
-  public void shoot(int i){
-    members.get(i).fire();
+  public void shoot(){
+    int chosenOne = (int)(Math.random() * members.size());
+    members.get(chosenOne).fire();
+  }
+  
+  public void cycle(){
+    if(System.currentTimeMillis()-cycleCounter > cycle){
+      shoot();
+      cycleCounter = System.currentTimeMillis();
+    }
   }
 }

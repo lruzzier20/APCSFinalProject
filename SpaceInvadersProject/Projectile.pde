@@ -40,8 +40,6 @@ public class Projectile extends Cow{
   }
   
   public void attack(Cow enemy){
-    System.out.println("Hit enemy!");
-    System.out.println(enemy);
     enemy.hit();
     this.hit();
   }
