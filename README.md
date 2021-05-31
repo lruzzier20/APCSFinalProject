@@ -23,3 +23,6 @@ Open in processing and press run button
 * ### 5/26/21:
   * Ish: Worked on projectile - cow colliisions. First I worked on methods to detect collisions and what to do in response. Then I wrote code to make the projectiles aware of other cows by using the Game class as the connection. Implemented this by passing reference to game to store all the cows and projectiles and then compared coordinates of projectiles to every element in cow, so that this way collisions can be detected.
   * Log: Coordinated "swarm" movement created, using a new Swarm object. This object also uses an ArrayList of Invaders like the original implementation, but simplified working with it significantly. Improvements may come in the future, if we can find a way to avoid going through so many loops.
+
+* ### 5/31/21:
+  * Ish: Managed swarm padding. Also fixed a bug where invaders would overlap and have multiple lives.

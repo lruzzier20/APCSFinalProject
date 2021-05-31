@@ -11,10 +11,9 @@ void setup(){
   player = new Player(game);
   game.setPlayer(player);
   enemies = new Swarm(game);
-  enemies.formation();
   barriers = new ArrayList<Barrier>();
   for(int i = 0; i < 4; i++){
-    barriers.add(new Barrier(i * width/4, 700,game));
+    barriers.add(new Barrier(i * width/4, 650,game));
   }
   
 }

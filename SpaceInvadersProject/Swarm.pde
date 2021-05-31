@@ -14,10 +14,12 @@ public class Swarm{
   }
   
   public void addMember(float x, float y){
+    System.out.println("called");
     members.add(new Invader(x,y,game));
   }
   
   public void animate(){
+    //System.out.println(members.size());
     for(Invader enemy : members){
       if(enemy.bump()){
         swapSpeed();
@@ -44,11 +46,13 @@ public class Swarm{
     //    addMember(200+(height-200)/11.0 * r,width/5.0 * c);
     //  }
     //}
-    int horizontalBuffer = 350;
-    int verticalBuffer = 100;
-    for(int r = 0; r < 5; r++){
-      for(int c = 0; c < 11; c++){
-        addMember(horizontalBuffer/2+(width-horizontalBuffer)/5.0 * c,verticalBuffer/2+(height-verticalBuffer)/11.0*r);
+    int horizontalBuffer = 200;
+    int verticalBuffer = 400;
+    int rows = 5;
+    int cols = 11;
+    for(int r = 0; r < rows; r++){
+      for(int c = 0; c < cols; c++){
+        addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r);
       }
     }
   }

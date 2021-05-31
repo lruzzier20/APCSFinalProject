@@ -1,7 +1,7 @@
 public class Invader extends Entity{
-  private int speed=5;
-  private int size=50;
-  
+  private int speed=width/480;
+  private int size=25;
+
   public Invader(Game game){
     super(50,50,0,game);
   }
@@ -12,7 +12,7 @@ public class Invader extends Entity{
   
   public void figure(){
     rectMode(CORNER);
-    rect(super.x,super.y,size,size/2);
+    rect(super.x,super.y,size,size);
   }
   
   public void hit(){
