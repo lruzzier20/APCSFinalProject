@@ -1,6 +1,6 @@
 public class Invader extends Entity{
   private int speed=width/480;
-  private int size=25;
+  private int size=30;
 
   public Invader(Game game){
     super(50,50,0,game);
