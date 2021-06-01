@@ -29,4 +29,4 @@ Open in processing and press run button
   * Ish: Managed swarm padding. Also fixed a bug where invaders would overlap and have multiple lives. After that, I made it possible for invaders to shoot and kill the player. Invaders shoot randomly.
 
 * ### 6/1/21:
-  * Ishraq: Created an updated UML diagram based on current structure. Also messed around with permission modifier to deter future misuse.
+  * Ishraq: Created an updated UML diagram based on current structure. Also messed around with permission modifier to deter future misuse. Also worked continuing rounds after swarms have been killed. Also managed to change Swarm speed based on the round count.

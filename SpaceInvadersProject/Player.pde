@@ -1,12 +1,15 @@
 public class Player extends Entity{
   private int speed = 10;
   private int size = 100;
-  
   public Player(Game game){
     super(100,(height-25),1,game);
+    boolean godMode = true;
     super.rateLimit = 500;
     super.lives = 3;
-    
+    if(godMode){
+      super.lives = 9999;
+      super.rateLimit = 0;
+    }
   }
   
   protected void figure(){
