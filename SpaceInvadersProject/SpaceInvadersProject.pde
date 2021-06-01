@@ -13,7 +13,7 @@ void setup(){
   enemies = new Swarm(game);
   barriers = new ArrayList<Barrier>();
   for(int i = 0; i < 4; i++){
-    barriers.add(new Barrier(i * width/4, 650,game));
+    barriers.add(new Barrier(50+i * width/4, 650,game));
   }
   
 }

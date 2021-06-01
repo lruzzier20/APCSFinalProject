@@ -77,6 +77,7 @@ public class Game{
   public void scoreDisplay(){
     fill(color(0,255,0));
     text("SCORE: "+score, 10,20);
+    text("LIVES: "+player.lives, 10, 40);
   }
   
   public boolean gameRunning(){

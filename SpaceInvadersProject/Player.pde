@@ -5,11 +5,12 @@ public class Player extends Entity{
   
   public Player(Game game){
     super(100,(height-25),1,game);
-    super.rateLimit = 1000;
+    super.rateLimit = 500;
     super.lives = 3;
   }
   
   protected void figure(){
+    fill(color(0,255,0));
     rectMode(CENTER);
     rect(super.x,super.y,size,size/2);
   }

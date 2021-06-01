@@ -27,6 +27,7 @@ public class Projectile extends Cow{
   }
   
   public void figure(){
+    fill(255);
     rect(x,y,size,size*8);
   }
   

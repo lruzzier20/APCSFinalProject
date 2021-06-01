@@ -21,15 +21,15 @@ public class Swarm{
   
   public void animate(){
     //System.out.println(members.size());
-    for(Invader enemy : members){
-      if(enemy.bump()){
+    for(int i=0;i<members.size();i++){
+      if(members.get(i).bump()){
         swapSpeed();
         break;
       }
-      
+      if(members.get(i).isDead){members.remove(i);}
     }
-    for(Invader enemy : members){
-      enemy.animate();
+    for(int i=0;i<members.size();i++){
+      members.get(i).animate();
     }
     cycle();
   }
@@ -61,8 +61,9 @@ public class Swarm{
     }
     }
   public void shoot(){
+    if(members.size()!=0){
     int chosenOne = (int)(Math.random() * members.size());
-    members.get(chosenOne).fire();
+    members.get(chosenOne).fire();}
   }
   
   public void cycle(){
