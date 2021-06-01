@@ -26,7 +26,12 @@ public class Swarm{
         swapSpeed();
         break;
       }
-      if(members.get(i).isDead){members.remove(i);}
+      if(members.get(i).isDead){
+        members.remove(i); 
+        if(members.size()>20){accelerate(0.01);}
+        else if(members.size()>5){accelerate(0.1);}
+        else{accelerate(1);}
+      }
     }
     for(int i=0;i<members.size();i++){
       members.get(i).animate();
@@ -70,6 +75,13 @@ public class Swarm{
     if(System.currentTimeMillis()-cycleCounter > cycle){
       shoot();
       cycleCounter = System.currentTimeMillis();
+    }
+  }
+  
+  public void accelerate(float amount){
+    for(Invader enemy : members){
+      if(enemy.getSpeed()>0){enemy.addSpeed(amount);}
+      else{enemy.addSpeed(-1*amount);}
     }
   }
 }

@@ -1,5 +1,5 @@
 public class Invader extends Entity{
-  private int speed=width/480;
+  private float speed=width/480;
   private int size=30;
   private int points;
   private color hue;
@@ -48,6 +48,13 @@ public class Invader extends Entity{
   
   public boolean inArea(float otherX, float otherY){
     return (otherX > super.x && otherX < super.x + size) && (otherY > super.y&& otherY < super.y + size);
-    
+  }
+  
+  public void addSpeed(float s){
+    speed+=s;
+  }
+  
+  public float getSpeed(){
+    return speed;
   }
 }
