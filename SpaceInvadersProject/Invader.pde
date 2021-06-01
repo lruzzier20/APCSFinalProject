@@ -17,18 +17,18 @@ public class Invader extends Entity{
     if(type==2){points=200; hue=color(255,0,0);}
   }
   
-  public void figure(){
+  protected void figure(){
     fill(hue);
     rectMode(CORNER);
     rect(super.x,super.y,size,size);
   }
   
-  public void hit(){
+  protected void hit(){
     game.pointAdd(points);
     die();
   }
   
-  public void move(){
+  protected void move(){
     if(x<0){super.x=0;}
     else if(x+size>width){super.x=width-size;}
     else {super.x+=speed;}
@@ -46,7 +46,7 @@ public class Invader extends Entity{
     return false;
   }
   
-  public boolean inArea(float otherX, float otherY){
+  protected boolean inArea(float otherX, float otherY){
     return (otherX > super.x && otherX < super.x + size) && (otherY > super.y&& otherY < super.y + size);
   }
   

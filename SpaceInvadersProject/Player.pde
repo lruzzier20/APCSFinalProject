@@ -5,7 +5,7 @@ public class Player extends Entity{
   
   public Player(Game game){
     super(100,(height-25),1,game);
-    super.rateLimit = 500;
+    super.rateLimit = 0;
     super.lives = 3;
   }
   
@@ -33,7 +33,7 @@ public class Player extends Entity{
     if(lives == 0) die();
   }
   
-  public boolean inArea(float otherX, float otherY){
+  protected boolean inArea(float otherX, float otherY){
     return (otherX > super.x - size/2 && otherX < super.x + size/2) && (otherY > super.y - size/2 && otherY < super.y + size/2);
     
   }

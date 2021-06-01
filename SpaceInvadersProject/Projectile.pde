@@ -6,7 +6,7 @@ public class Projectile extends Cow{
   }
   
   //moves up or down depending on who shot it
-  public void move(){
+  protected void move(){
     if(isFriendly == 1){
       y -= 10;
     }
@@ -26,7 +26,7 @@ public class Projectile extends Cow{
     }
   }
   
-  public void figure(){
+   protected void figure(){
     fill(255);
     rect(x,y,size,size*8);
   }
@@ -36,16 +36,16 @@ public class Projectile extends Cow{
     return y < 0 || y > height;
   }
   
-  public void hit(){
+  protected void hit(){
     die();
   }
   
-  public void attack(Cow enemy){
+  protected void attack(Cow enemy){
     enemy.hit();
     this.hit();
   }
   
-  public boolean inArea(float otherX, float otherY){
+  protected boolean inArea(float otherX, float otherY){
     return (otherX > super.x - size/2 && otherX < super.x + size/2) && (otherY > super.y - size/2 && otherY < super.y + size/2);
     
   }

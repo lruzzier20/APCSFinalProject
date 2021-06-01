@@ -3,19 +3,20 @@ public class Swarm{
   private Game game;
   private long cycleCounter = 0;
   private long cycle = 1000;
+  private int round = 1;
   public Swarm(Game game){
     this.game = game;
     members = new ArrayList<Invader>();
-    formation();
+    setSwarm();
   }
   
-  public void swapSpeed(){
+  private void swapSpeed(){
     for(Invader enemy:members){
       enemy.swap();
     }
   }
   
-  public void addMember(float x, float y, int type){
+  private void addMember(float x, float y, int type){
     members.add(new Invader(type,x,y,game));
   }
   
@@ -28,9 +29,9 @@ public class Swarm{
       }
       if(members.get(i).isDead){
         members.remove(i); 
-        if(members.size()>20){accelerate(0.01);}
-        else if(members.size()>5){accelerate(0.1);}
-        else{accelerate(1);}
+        if(members.size()>20){accelerate(0.01 * round);}
+        else if(members.size()>5){accelerate(0.1 * round);}
+        else{accelerate(1 * round/2);}
       }
     }
     for(int i=0;i<members.size();i++){
@@ -43,7 +44,7 @@ public class Swarm{
     return members;
   }
   
-  public void setSwarm(){
+  private void setSwarm(){
      formation();
   }
   
@@ -65,23 +66,32 @@ public class Swarm{
       }
     }
     }
-  public void shoot(){
+  private void shoot(){
     if(members.size()!=0){
     int chosenOne = (int)(Math.random() * members.size());
     members.get(chosenOne).fire();}
   }
   
-  public void cycle(){
+  private void cycle(){
     if(System.currentTimeMillis()-cycleCounter > cycle){
       shoot();
       cycleCounter = System.currentTimeMillis();
     }
   }
   
-  public void accelerate(float amount){
+  private void accelerate(float amount){
     for(Invader enemy : members){
       if(enemy.getSpeed()>0){enemy.addSpeed(amount);}
       else{enemy.addSpeed(-1*amount);}
     }
+  }
+  
+  public boolean invadersDead(){
+    return members.size() == 0;
+  }
+  
+  public void nextSwarm(){
+    setSwarm();
+    round++;
   }
 }
