@@ -6,6 +6,7 @@ public class Game{
   private Player player;
   private ArrayList<Cow> gameCows = new ArrayList<Cow>();
   private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
+  private int score;
   public Game(Player player){
     this.player = player;
   }
@@ -74,10 +75,15 @@ public class Game{
   }
   
   public void scoreDisplay(){
-    System.out.println(player.lives());
+    fill(color(0,255,0));
+    text("SCORE: "+score, 10,20);
   }
   
   public boolean gameRunning(){
     return player.lives() > 0;
+  }
+  
+  public void pointAdd(int p){
+    score+=p;
   }
 }

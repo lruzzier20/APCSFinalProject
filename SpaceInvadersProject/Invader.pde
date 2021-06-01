@@ -1,21 +1,30 @@
 public class Invader extends Entity{
   private int speed=width/480;
   private int size=30;
+  private int points;
+  private color hue;
 
   public Invader(Game game){
     super(50,50,0,game);
+    points=100;
+    hue=color(255);
   }
   
-  public Invader(float x, float y,Game game){
+  public Invader(int type, float x, float y,Game game){
     super(x,y,0,game);
+    if(type==0){points=100; hue=color(255);}
+    if(type==1){points=150; hue=color(0,0,255);}
+    if(type==2){points=200; hue=color(255,0,0);}
   }
   
   public void figure(){
+    fill(hue);
     rectMode(CORNER);
     rect(super.x,super.y,size,size);
   }
   
   public void hit(){
+    game.pointAdd(points);
     die();
   }
   

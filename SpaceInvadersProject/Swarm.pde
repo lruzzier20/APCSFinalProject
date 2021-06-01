@@ -15,8 +15,8 @@ public class Swarm{
     }
   }
   
-  public void addMember(float x, float y){
-    members.add(new Invader(x,y,game));
+  public void addMember(float x, float y, int type){
+    members.add(new Invader(type,x,y,game));
   }
   
   public void animate(){
@@ -54,7 +54,9 @@ public class Swarm{
     int cols = 11;
     for(int r = 0; r < rows; r++){
       for(int c = 0; c < cols; c++){
-        addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r);
+        if(r==0){addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r, 2);}
+        else if(r==1){addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r, 1);}
+        else {addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r, 0);}
       }
     }
     }
