@@ -11,6 +11,7 @@ Open in processing and press run button
 
 ## UML Diagram Log:
 * First diagram: https://imgur.com/wf7BGWW
+* Second diagram (updated 6/1): https://imgur.com/a/QPMDZcy
 
 ## Git Development Log:
 * ### 5/24/21:
@@ -26,3 +27,6 @@ Open in processing and press run button
 
 * ### 5/31/21:
   * Ish: Managed swarm padding. Also fixed a bug where invaders would overlap and have multiple lives. After that, I made it possible for invaders to shoot and kill the player. Invaders shoot randomly.
+
+* ### 6/1/21:
+  * Ishraq: Created an updated UML diagram based on current structure. Also messed around with permission modifier to deter future misuse.
