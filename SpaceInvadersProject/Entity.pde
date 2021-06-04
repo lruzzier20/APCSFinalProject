@@ -13,11 +13,12 @@ public abstract class Entity extends Cow{
     //uses time to rate limit the shooting; rate is customizable using lastFired and rateLimit
     long currentTime = System.currentTimeMillis();
     if(lastFired == -1 || currentTime - lastFired >= rateLimit){
-      Projectile bullet = new Projectile(super.x,super.y,super.isFriendly,this.game);
+      Projectile bullet = new Projectile(super.x,super.y,this.isFriendly,this.game);
       currentFired.add(bullet);
       game.addBullet(bullet);
       lastFired = currentTime;
-
+    }
+    else{
     }
   }
   

@@ -1,22 +1,19 @@
 public class Barrier extends Cow{
   int health = 3;
   float size = 50;
-  boolean toggleHit = false;
   public Barrier(float x, float y,Game game){
     super(x, y, 3, game);  
   }
   
   public void hit(){
     health--;
-    toggleHit = !toggleHit;
     kill();
   }
   
   public void figure(){
-    if(toggleHit)fill(0,255,0);
-    else{
-      fill(255,0,0);
-    }
+    if(health==3)fill(0,255,0);
+    if(health==2)fill(0,155,0);
+    if(health==1)fill(0,55,0);
     rectMode(CORNER);
     rect(x,y,size,size);
     fill(255);

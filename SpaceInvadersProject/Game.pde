@@ -6,6 +6,7 @@ public class Game{
   private Player player;
   private ArrayList<Cow> gameCows = new ArrayList<Cow>();
   private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
+  private int score;
   public Game(Player player){
     this.player = player;
   }
@@ -18,6 +19,7 @@ public class Game{
   }
   //This is the command that's going to be called in the draw loop
   public void run(){
+    scoreDisplay();
     playerMovement();
     for(int bullet = 0; bullet < projectiles.size();bullet++){
       Projectile current = projectiles.get(bullet);
@@ -70,5 +72,19 @@ public class Game{
   
   public void removeBullet(Projectile cow){
     projectiles.remove(cow);
+  }
+  
+  public void scoreDisplay(){
+    fill(color(0,255,0));
+    text("SCORE: "+score, 10,20);
+    text("LIVES: "+player.lives, 10, 40);
+  }
+  
+  public boolean gameRunning(){
+    return player.lives() > 0;
+  }
+  
+  public void pointAdd(int p){
+    score+=p;
   }
 }

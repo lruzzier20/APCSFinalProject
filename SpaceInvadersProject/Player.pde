@@ -1,15 +1,19 @@
 public class Player extends Entity{
   private int speed = 10;
   private int size = 100;
-  
-  
   public Player(Game game){
     super(100,(height-25),1,game);
-    super.rateLimit = 1000;
+    boolean godMode = false;
+    super.rateLimit = 500;
     super.lives = 3;
+    if(godMode){
+      super.lives = 9999;
+      super.rateLimit = 0;
+    }
   }
   
   protected void figure(){
+    fill(color(0,255,0));
     rectMode(CENTER);
     rect(super.x,super.y,size,size/2);
   }
@@ -27,14 +31,18 @@ public class Player extends Entity{
     if(right) super.x += -speed;
   }
   
-  public void hit(){
+  protected void hit(){
     lives--;
     if(lives == 0) die();
   }
   
-  public boolean inArea(float otherX, float otherY){
+  protected boolean inArea(float otherX, float otherY){
     return (otherX > super.x - size/2 && otherX < super.x + size/2) && (otherY > super.y - size/2 && otherY < super.y + size/2);
     
+  }
+  
+  public int lives(){
+    return lives;
   }
   
 }

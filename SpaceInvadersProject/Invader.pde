@@ -1,28 +1,38 @@
 public class Invader extends Entity{
-  private int speed=5;
-  private int size=50;
-  
+  private float speed=width/480;
+  private int size=30;
+  private int points;
+  private color hue;
+
   public Invader(Game game){
     super(50,50,0,game);
+    points=100;
+    hue=color(255);
   }
   
-  public Invader(int x, int y,Game game){
+  public Invader(int type, float x, float y,Game game){
     super(x,y,0,game);
+    if(type==0){points=100; hue=color(255);}
+    if(type==1){points=150; hue=color(0,0,255);}
+    if(type==2){points=200; hue=color(255,0,0);}
   }
   
-  public void figure(){
+  protected void figure(){
+    fill(hue);
     rectMode(CORNER);
-    rect(super.x,super.y,size,size/2);
+    rect(super.x,super.y,size,size);
   }
   
-  public void hit(){
+  protected void hit(){
+    game.pointAdd(points);
     die();
   }
   
-  public void move(){
+  protected void move(){
     if(x<0){super.x=0;}
     else if(x+size>width){super.x=width-size;}
     else {super.x+=speed;}
+    rocketUse();
   }
   
   public void swap(){
@@ -36,8 +46,15 @@ public class Invader extends Entity{
     return false;
   }
   
-  public boolean inArea(float otherX, float otherY){
+  protected boolean inArea(float otherX, float otherY){
     return (otherX > super.x && otherX < super.x + size) && (otherY > super.y&& otherY < super.y + size);
-    
+  }
+  
+  public void addSpeed(float s){
+    speed+=s;
+  }
+  
+  public float getSpeed(){
+    return speed;
   }
 }
