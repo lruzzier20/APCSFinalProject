@@ -25,8 +25,16 @@ Open in processing and press run button
   * Ish: Worked on projectile - cow colliisions. First I worked on methods to detect collisions and what to do in response. Then I wrote code to make the projectiles aware of other cows by using the Game class as the connection. Implemented this by passing reference to game to store all the cows and projectiles and then compared coordinates of projectiles to every element in cow, so that this way collisions can be detected.
   * Log: Coordinated "swarm" movement created, using a new Swarm object. This object also uses an ArrayList of Invaders like the original implementation, but simplified working with it significantly. Improvements may come in the future, if we can find a way to avoid going through so many loops.
 
+* ### 5/28/21:
+  * Ish: Fixed barrier issues 
+  * Log: Added speed variable to projectile, as well as fixing some inconsistencies with swarm; bug fixes
+
 * ### 5/31/21:
   * Ish: Managed swarm padding. Also fixed a bug where invaders would overlap and have multiple lives. After that, I made it possible for invaders to shoot and kill the player. Invaders shoot randomly.
+  * Log: Added types of invaders with point values for destroying them, swarm invader speedup after destroying them, and some bug fixes.
 
 * ### 6/1/21:
   * Ishraq: Created an updated UML diagram based on current structure. Also messed around with permission modifier to deter future misuse. Also worked continuing rounds after swarms have been killed. Also managed to change Swarm speed based on the round count.
+
+* ### 6/2/21:
+  * Log: Added game over screen as well as ability to restart once you have lost
