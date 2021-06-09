@@ -1,5 +1,5 @@
 public class Invader extends Entity{
-  private float speed=width/480;
+  private float speed= width/20;//width/480;
   private int size=30;
   private int points;
   private color hue;

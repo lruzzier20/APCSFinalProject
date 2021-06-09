@@ -21,14 +21,16 @@ void setup(){
 }
 
 void draw(){
-  if(player.lives()!=0){
+  if(game.gameRunning()){
   reset();
   game.run();
   player.animate();
   enemies.animate();
   for(int i = 0; i < barriers.size();i++){
     barriers.get(i).animate();
-  }}else if(counter==0){fill(0); rect(50,30,10,10); fill(color(0,255,0)); text("0",50,40); counter++;}
+  }
+  }
+  else if(counter==0){fill(0); rect(50,30,10,10); fill(color(0,255,0)); text("0",50,40); counter++;}
   else{gameOver();}
 }
 

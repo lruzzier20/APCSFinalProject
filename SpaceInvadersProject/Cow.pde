@@ -32,4 +32,8 @@ public abstract class Cow{
   
   protected abstract void figure();
   
+  public float[] coords(){
+    return new float[]{x,y};
+  }
+  
 }

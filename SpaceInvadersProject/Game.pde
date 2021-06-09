@@ -7,6 +7,7 @@ public class Game{
   private ArrayList<Cow> gameCows = new ArrayList<Cow>();
   private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
   private int score;
+  private Swarm swarm;
   public Game(Player player){
     this.player = player;
   }
@@ -80,11 +81,17 @@ public class Game{
     text("LIVES: "+player.lives, 10, 40);
   }
   
+  public void setSwarm(Swarm swarm){
+    this.swarm = swarm;
+  }
+  
   public boolean gameRunning(){
-    return player.lives() > 0;
+    return player.lives() > 0 && !swarm.gameEnd();
   }
   
   public void pointAdd(int p){
     score+=p;
   }
+  
+  
 }

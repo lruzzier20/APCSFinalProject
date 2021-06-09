@@ -6,6 +6,7 @@ public class Swarm{
   private int round = 1;
   public Swarm(Game game){
     this.game = game;
+    game.setSwarm(this);
     members = new ArrayList<Invader>();
     setSwarm();
   }
@@ -98,4 +99,14 @@ public class Swarm{
     setSwarm();
     round++;
   }
+  
+  public boolean gameEnd(){
+    for(int invader = 0; invader < members.size(); invader++){
+        if(members.get(invader).coords()[1] > 600){
+          return true;
+        }
+    }
+    return false;
+  }
+  
 }
