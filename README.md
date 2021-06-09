@@ -38,3 +38,6 @@ Open in processing and press run button
 
 * ### 6/2/21:
   * Log: Added game over screen as well as ability to restart once you have lost
+
+* ### 6/9/21:
+  * Log: Added explosion object for when a cow is destroyed, further implementation to follow  
