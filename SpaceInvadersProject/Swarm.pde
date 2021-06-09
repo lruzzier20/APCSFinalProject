@@ -102,7 +102,7 @@ public class Swarm{
   
   public boolean gameEnd(){
     for(int invader = 0; invader < members.size(); invader++){
-        if(members.get(invader).coords()[1] > 600){
+        if(members.get(invader).coords()[1] > 685){
           return true;
         }
     }
