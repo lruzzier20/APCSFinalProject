@@ -4,6 +4,7 @@ Player player;
 Game game;
 Swarm enemies;
 ArrayList<Barrier> barriers;
+ArrayList<Explosion> explosions;
 long counter=0;
 void setup(){
   background(0);
@@ -13,6 +14,8 @@ void setup(){
   game.setPlayer(player);
   enemies = new Swarm(game);
   barriers = new ArrayList<Barrier>();
+  explosions = new ArrayList<Explosion>();
+  explosions.add(new Explosion(100,100,game));
   for(int i = 0; i < 4; i++){
     barriers.add(new Barrier(50+i * width/4, 650,game));
   }
@@ -25,6 +28,10 @@ void draw(){
   game.run();
   player.animate();
   enemies.animate();
+  for(int i = 0; i < explosions.size(); i++){
+    if(explosions.get(i).isDead){explosions.remove(i);}else{
+    explosions.get(i).figure();}
+  }
   for(int i = 0; i < barriers.size();i++){
     barriers.get(i).animate();
   }}else if(counter==0){fill(0); rect(50,30,10,10); fill(color(0,255,0)); text("0",50,40); counter++;}
