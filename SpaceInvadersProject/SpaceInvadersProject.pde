@@ -14,8 +14,6 @@ void setup(){
   game.setPlayer(player);
   enemies = new Swarm(game);
   barriers = new ArrayList<Barrier>();
-  explosions = new ArrayList<Explosion>();
-  explosions.add(new Explosion(100,100,game));
   for(int i = 0; i < 4; i++){
     barriers.add(new Barrier(50+i * width/4, 650,game));
 
@@ -28,10 +26,6 @@ void draw(){
   reset();
   game.run();
   player.animate();
-  for(int i = 0; i < explosions.size(); i++){
-   if(explosions.get(i).isDead){explosions.remove(i);}else{
-   explosions.get(i).figure();}
-  }
   enemies.animate();
   for(int i = 0; i < barriers.size();i++){
     barriers.get(i).animate();

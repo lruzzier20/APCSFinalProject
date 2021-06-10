@@ -26,6 +26,7 @@ public class Invader extends Entity{
   protected void hit(){
     game.pointAdd(points);
     die();
+    game.boom(x,y);
   }
   
   protected void move(){

@@ -6,6 +6,7 @@ public class Game{
   private Player player;
   private ArrayList<Cow> gameCows = new ArrayList<Cow>();
   private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
+  private ArrayList<Explosion> explosions = new ArrayList<Explosion>();
   private int score;
   private Swarm swarm;
   public Game(Player player){
@@ -22,6 +23,10 @@ public class Game{
   public void run(){
     scoreDisplay();
     playerMovement();
+    for(int i = 0; i < explosions.size(); i++){
+      if(explosions.get(i).isDead){explosions.remove(i);}else{
+      explosions.get(i).figure();}
+    }
     for(int bullet = 0; bullet < projectiles.size();bullet++){
       Projectile current = projectiles.get(bullet);
       current.searchHits(gameCows);
@@ -93,5 +98,7 @@ public class Game{
     score+=p;
   }
   
-  
+  public void boom(float x, float y){
+    explosions.add(new Explosion(x,y,this));
+  }
 }

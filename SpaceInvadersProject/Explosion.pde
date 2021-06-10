@@ -5,10 +5,16 @@ public class Explosion extends Cow{
   }
 
   protected void figure(){
-    fill(color(255,0,0));
-    ellipse(x,y,40,40);
+    stroke(255);
+    line(x,y,x+7,y+7);
+    line(x+20, y, x+13, y+7);
+    line(x+10,y,x+10,y+7);
+    line(x,y+20,x+7,y+13);
+    line(x+10,y+20,x+10,y+13);
+    line(x+20,y+20,x+13,y+13);
     counter++;
     if(counter==10){die();}
+    stroke(0);
   }
 
   protected boolean inArea(float x, float y){
