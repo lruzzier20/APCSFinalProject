@@ -2,27 +2,30 @@ public class Invader extends Entity{
   private float speed= width/480;
   private int size=30;
   private int points;
-  private color hue;
-
+  private boolean invaderOpen;
+  PImage closed;
+  PImage open;
+  PImage current;
   public Invader(Game game){
     super(50,50,0,game);
     points=100;
-    hue=color(255);
   }
   
   public Invader(int type, float x, float y,Game game){
     super(x,y,0,game);
-    if(type==0){points=100; hue=color(255);}
-    if(type==1){points=150; hue=color(0,0,255);}
-    if(type==2){points=200; hue=color(255,0,0);}
+    if(type==0){points=100;}
+    if(type==1){points=150;}
+    if(type==2){points=200;}
+    int number = 1+type;
+    closed = loadImage("invader"+(number)+"closed.png");
+    open = loadImage("invader"+(number)+"open.png");
+    current = open;
   }
   
   protected void figure(){
-    fill(hue);
-    rectMode(CORNER);
-    rect(super.x,super.y,size,size);
+    imageMode(CORNER);
+    image(current,super.x,super.y,size,size);
   }
-  
   protected void hit(){
     game.pointAdd(points);
     die();
