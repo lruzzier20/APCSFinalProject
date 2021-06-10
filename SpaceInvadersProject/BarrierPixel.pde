@@ -1,12 +1,8 @@
 public class BarrierPixel extends Cow{
-  private 
   public BarrierPixel(float x,float y,Game game){
-    super(x,y,3,game);
+    super(x,y,3,game); 
   }
-  
-  public void hit(){
-  }
-  public void figure(){
+ public void figure(){
   
   }
   
@@ -20,5 +16,7 @@ public class BarrierPixel extends Cow{
   public void kill(){
     die();
   }
+  
+  public void hit(){}
   
 }
