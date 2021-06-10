@@ -81,7 +81,11 @@ public class Swarm{
     if(System.currentTimeMillis()-cycleCounter > cycle){
       shoot();
       cycleCounter = System.currentTimeMillis();
+      for(int invader = 0; invader < members.size();invader++){
+        members.get(invader).swapImage();
+      }
     }
+
   }
   
   private void accelerate(float amount){

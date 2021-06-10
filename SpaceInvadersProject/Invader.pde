@@ -13,7 +13,6 @@ public class Invader extends Entity{
   
   public Invader(int type, float x, float y,Game game){
     super(x,y,0,game);
-
     if(type==0){points=100;}
     if(type==1){points=150;}
     if(type==2){points=200;}
@@ -38,6 +37,13 @@ public class Invader extends Entity{
     else if(x+size>width){super.x=width-size;}
     else {super.x+=speed;}
     rocketUse();
+  }
+  
+  public void swapImage(){
+    if(current == open) current = closed;
+    else{
+      current = open;
+    }
   }
   
   public void swap(){

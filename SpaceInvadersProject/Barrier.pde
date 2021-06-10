@@ -1,8 +1,10 @@
 public class Barrier extends Cow{
   int health = 3;
   float size = 50;
-  public Barrier(float x, float y,Game game){
-    super(x, y, 3, game);  
+  BarrierBlock block;
+  public Barrier(float x, float y,Game game, BarrierBlock block){
+    super(x, y, 3, game);
+    this.block = block;
   }
   
   public void hit(){
