@@ -37,6 +37,10 @@ public class BarrierPixel extends Cow{
     }
   }
   
+  public void revive(){
+    isDead = false;
+  }
+  
   
   
 }
