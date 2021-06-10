@@ -12,9 +12,9 @@ public class Invader extends Entity{
   
   public Invader(int type, float x, float y,Game game){
     super(x,y,0,game);
-    if(type==0){points=100; hue=color(255);}
-    if(type==1){points=150; hue=color(0,0,255);}
-    if(type==2){points=200; hue=color(255,0,0);}
+    if(type==0){points=10; hue=color(255);}
+    if(type==1){points=20; hue=color(0,0,255);}
+    if(type==2){points=30; hue=color(255,0,0);}
   }
   
   protected void figure(){
