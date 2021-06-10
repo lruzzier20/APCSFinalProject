@@ -13,9 +13,9 @@ public class Invader extends Entity{
   
   public Invader(int type, float x, float y,Game game){
     super(x,y,0,game);
-    if(type==0){points=100;}
-    if(type==1){points=150;}
-    if(type==2){points=200;}
+    if(type==0){points=10;}
+    if(type==1){points=20;}
+    if(type==2){points=30;}
     int number = 1+type;
     closed = loadImage("invader"+(number)+"closed.png");
     open = loadImage("invader"+(number)+"open.png");

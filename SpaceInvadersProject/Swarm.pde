@@ -3,7 +3,7 @@ public class Swarm{
   private Game game;
   private long cycleCounter = 0;
   private long cycle = 1000;
-  private int round = 1;
+  public int round = 1;
   public Swarm(Game game){
     this.game = game;
     game.setSwarm(this);
@@ -66,7 +66,7 @@ public class Swarm{
     for(int r = 0; r < rows; r++){
       for(int c = 0; c < cols; c++){
         if(r==0){addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r, 2);}
-        else if(r==1){addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r, 1);}
+        else if(r==1||r==2){addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r, 1);}
         else {addMember(horizontalBuffer/2+(width-horizontalBuffer)/cols * c,50+(height-verticalBuffer)/rows*r, 0);}
       }
     }
