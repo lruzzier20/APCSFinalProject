@@ -3,7 +3,7 @@ public class Swarm{
   private Game game;
   private long cycleCounter = 0;
   private long cycle = 1000;
-  private int round = 1;
+  public int round = 1;
   public Swarm(Game game){
     this.game = game;
     game.setSwarm(this);

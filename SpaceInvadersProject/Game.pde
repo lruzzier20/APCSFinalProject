@@ -8,6 +8,8 @@ public class Game{
   private ArrayList<Projectile> projectiles = new ArrayList<Projectile>();
   private ArrayList<Explosion> explosions = new ArrayList<Explosion>();
   private int score;
+  private UFO ufo;
+  private int temp=0;
   private Swarm swarm;
   public Game(Player player){
     this.player = player;
@@ -31,6 +33,8 @@ public class Game{
       Projectile current = projectiles.get(bullet);
       current.searchHits(gameCows);
     }
+    if(random(3000)>=2999-swarm.round){if(temp!=1){ufo=new UFO(50,10,this); gameCows.add(ufo); temp=1;}}
+    if(temp!=0&&!ufo.isDead){ufo.animate();}else{temp=0;}
   }
   
   /*Press and release are called whenever a key is pressed or released respectively. 
