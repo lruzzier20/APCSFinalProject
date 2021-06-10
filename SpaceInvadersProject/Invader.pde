@@ -48,7 +48,7 @@ public class Invader extends Entity{
   
   public void swap(){
     speed*=-1;
-    super.y+=5;
+    super.y+=10;
   }
   
   public boolean bump(){
