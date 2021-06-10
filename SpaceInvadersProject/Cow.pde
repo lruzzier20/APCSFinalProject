@@ -23,6 +23,7 @@ public abstract class Cow{
   protected abstract void hit();
   protected void die(){
     isDead = true;
+    
   }
   
   protected abstract boolean inArea(float x, float y);

@@ -13,6 +13,7 @@ public class Invader extends Entity{
   
   public Invader(int type, float x, float y,Game game){
     super(x,y,0,game);
+
     if(type==0){points=100;}
     if(type==1){points=150;}
     if(type==2){points=200;}
@@ -29,6 +30,7 @@ public class Invader extends Entity{
   protected void hit(){
     game.pointAdd(points);
     die();
+    game.boom(x,y);
   }
   
   protected void move(){
