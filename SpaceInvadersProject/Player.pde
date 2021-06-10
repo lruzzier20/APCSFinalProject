@@ -1,8 +1,10 @@
 public class Player extends Entity{
+  PImage image;
   private int speed = 10;
   private int size = 100;
   public Player(Game game){
     super(100,(height-25),1,game);
+    image = loadImage("player.png");
     boolean godMode = false;
     super.rateLimit = 500;
     super.lives = 3;
@@ -13,9 +15,10 @@ public class Player extends Entity{
   }
   
   protected void figure(){
+    imageMode(CENTER);
+    image(image,super.x,super.y,size,size/2);
     fill(color(0,255,0));
-    rectMode(CENTER);
-    rect(super.x,super.y,size,size/2);
+    //rect(super.x,super.y,size,size/2);
   }
   
   protected void move(){
