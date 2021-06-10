@@ -41,3 +41,4 @@ Open in processing and press run button
 
 * ### 6/9/21:
   * Log: Added explosion object for when a cow is destroyed, further implementation to follow  
+  * Ish: Invaders end game when reaching height of player
