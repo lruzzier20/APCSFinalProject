@@ -25,10 +25,11 @@ public class BarrierPixel extends Cow{
   
   public void hit(){
     kill();
+    askNeighborsDie();
   }
   
   public void askNeighborsDie(){
-    ArrayList<BarrierPixel> barrierBlock = new ArrayList<BarrierPixel>();
+    ArrayList<BarrierPixel> barrierBlock = block.sendList();
     for(int pixel = 0; pixel < barrierBlock.size(); pixel++){
       BarrierPixel current = barrierBlock.get(pixel);
       if(dist(current.x,current.y,this.x,this.y) < 5){
