@@ -26,7 +26,7 @@ public class BarrierBlock{
   public void setupBarrier(){
     for(int r = 0; r < ySize;r++){
       for(int c = 0; c < xSize; c++){
-        barrierBlock.add(new BarrierPixel(x+c,y+r,game,this));
+        barrierBlock.add(new BarrierPixel(x+(float)c,y+(float)r,game,this));
       }
     }
   }

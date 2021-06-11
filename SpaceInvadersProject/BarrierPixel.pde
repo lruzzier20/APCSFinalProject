@@ -3,11 +3,12 @@ public class BarrierPixel extends Cow{
   public BarrierPixel(float x,float y,Game game, BarrierBlock block){
     super(x,y,3,game); 
     this.block = block;
-    System.out.println(this.x+ ""+this.y);
   }
- public void figure(){
-    fill(0,255,0);
-    rect(x,y,1,1);
+   public void figure(){
+    noStroke();
+    fill(color(0,255,0));
+    rectMode(CENTER);
+    rect(x,y,2,2);
   }
   
   public boolean inArea(float otherx, float othery){

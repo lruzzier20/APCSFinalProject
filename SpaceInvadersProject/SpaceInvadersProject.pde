@@ -21,7 +21,7 @@ void setup(){
 
   //}
   barriers = new ArrayList<BarrierBlock>();
-  BarrierBlock blockTest = new BarrierBlock(50,50,game);
+  BarrierBlock blockTest = new BarrierBlock(100,100,game);
   barriers.add(blockTest);
   
   
@@ -34,9 +34,10 @@ void draw(){
     player.animate();
     enemies.animate();
   
-    for(int i = 0; i < barriers.size();i++){
-      barriers.get(i).animate();
-    }
+    //for(int i = 0; i < barriers.size();i++){
+    //  barriers.get(i).animate();
+    //}
+    barriers.get(0).animate();
   }
   else if(counter==0){fill(0); rect(50,30,10,10); fill(color(0,255,0)); text("0",50,40); counter++;}
   else{gameOver();}
