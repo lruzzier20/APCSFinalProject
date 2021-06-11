@@ -39,6 +39,13 @@ void draw(){
     for(int i = 0; i < barriers.size();i++){
       barriers.get(i).animate();
     }
+    
+    if(enemies.invadersDead()){
+      enemies.nextSwarm();
+      for(int i = 0; i < barriers.size();i++){
+      barriers.get(i).revive();
+    }
+    }
 
   }
   else if(counter==0){fill(0); rect(50,30,10,10); fill(color(0,255,0)); text("0",50,40); counter++;}

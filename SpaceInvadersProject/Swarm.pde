@@ -40,9 +40,6 @@ public class Swarm{
       members.get(i).animate();
     }
     cycle();
-    if(invadersDead()){
-      nextSwarm();
-    }
   }
   
   public ArrayList<Invader> members(){

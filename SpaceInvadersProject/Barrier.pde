@@ -1,3 +1,4 @@
+// DEPRECTAED; USE BARRIERBLOCK INSTEAD
 public class Barrier extends Cow{
   int health = 3;
   float size = 50;
