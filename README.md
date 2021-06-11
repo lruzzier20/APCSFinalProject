@@ -42,3 +42,6 @@ Open in processing and press run button
 * ### 6/9/21:
   * Log: Added explosion object for when a cow is destroyed, further implementation to follow  
   * Ish: Invaders end game when reaching height of player
+
+* ### 6/10/21:
+  * Log: Explosions are now generated on invader death, point values and swarm pattern congruous to original game, and inclusion of red UFO object, also from original game
