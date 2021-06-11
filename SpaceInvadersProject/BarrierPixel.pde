@@ -44,6 +44,10 @@ public class BarrierPixel extends Cow{
     isDead = false;
   }
   
-  
+  public void invaderTouch(float lowerY){
+    if(lowerY > this.y - 1 && lowerY < this.y + 20){
+      kill();
+    }
+  }
   
 }

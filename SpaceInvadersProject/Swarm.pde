@@ -105,12 +105,17 @@ public class Swarm{
   }
   
   public boolean gameEnd(){
-    for(int invader = 0; invader < members.size(); invader++){
-        if(members.get(invader).coords()[1] > 685){
-          return true;
-        }
+    return lowestY() > 685;
+  }
+  
+  public float lowestY(){
+    float lowestY = 0;
+    for(int invader = 0; invader < members.size();invader++){
+      if(members.get(invader).coords()[1] > lowestY){
+        lowestY = members.get(invader).coords()[1];
+      }
     }
-    return false;
+    return lowestY;
   }
   
 }

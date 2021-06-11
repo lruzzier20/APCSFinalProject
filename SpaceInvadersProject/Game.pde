@@ -105,4 +105,9 @@ public class Game{
   public void boom(float x, float y){
     explosions.add(new Explosion(x,y,this));
   }
+  
+  public float lowestY(){
+    return swarm.lowestY();
+  }
+  
 }

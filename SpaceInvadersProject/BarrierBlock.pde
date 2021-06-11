@@ -16,6 +16,7 @@ public class BarrierBlock{
   public void animate(){
     for(int block = 0; block < barrierBlock.size(); block++){
       barrierBlock.get(block).animate();
+      barrierBlock.get(block).invaderTouch(game.lowestY());
     }
   }
   
