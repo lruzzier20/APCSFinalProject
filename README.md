@@ -12,6 +12,7 @@ Open in processing and press run button
 ## UML Diagram Log:
 * First diagram: https://imgur.com/wf7BGWW
 * Second diagram (updated 6/1): https://imgur.com/a/QPMDZcy
+* Final diagram (updated 6/10): https://imgur.com/a/wdyrPTJ
 
 ## Git Development Log:
 * ### 5/24/21:
@@ -45,3 +46,5 @@ Open in processing and press run button
 
 * ### 6/10/21:
   * Log: Explosions are now generated on invader death, point values and swarm pattern congruous to original game, and inclusion of red UFO object, also from original game
+  * Ish: Worked on visuals. Sprites are now being used and barriers are fancier than before.
+
