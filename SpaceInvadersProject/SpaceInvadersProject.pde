@@ -3,7 +3,9 @@
 Player player;
 Game game;
 Swarm enemies;
-ArrayList<Barrier> barriers;
+//ArrayList<Barrier> barriers;
+ArrayList<BarrierBlock> barriers;
+
 ArrayList<Explosion> explosions;
 long counter=0;
 void setup(){
@@ -13,23 +15,28 @@ void setup(){
   player = new Player(game);
   game.setPlayer(player);
   enemies = new Swarm(game);
-  barriers = new ArrayList<Barrier>();
-  for(int i = 0; i < 4; i++){
-    barriers.add(new Barrier(50+i * width/4, 650,game));
+  //barriers = new ArrayList<Barrier>();
+  //for(int i = 0; i < 4; i++){
+  //  barriers.add(new Barrier(50+i * width/4, 650,game));
 
-  }
+  //}
+  barriers = new ArrayList<BarrierBlock>();
+  BarrierBlock blockTest = new BarrierBlock(50,50,game);
+  barriers.add(blockTest);
+  
   
 }
 
 void draw(){
   if(game.gameRunning()){
-  reset();
-  game.run();
-  player.animate();
-  enemies.animate();
-  for(int i = 0; i < barriers.size();i++){
-    barriers.get(i).animate();
-  }
+    reset();
+    game.run();
+    player.animate();
+    enemies.animate();
+  
+    for(int i = 0; i < barriers.size();i++){
+      barriers.get(i).animate();
+    }
   }
   else if(counter==0){fill(0); rect(50,30,10,10); fill(color(0,255,0)); text("0",50,40); counter++;}
   else{gameOver();}
