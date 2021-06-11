@@ -1,7 +1,7 @@
 public class Player extends Entity{
   PImage image;
   private int speed = 10;
-  private int size = 100;
+  private int size = 75;
   public Player(Game game){
     super(100,(height-25),1,game);
     image = loadImage("player.png");

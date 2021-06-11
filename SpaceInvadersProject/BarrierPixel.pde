@@ -33,7 +33,7 @@ public class BarrierPixel extends Cow{
     for(int pixel = 0; pixel < barrierBlock.size(); pixel++){
       BarrierPixel current = barrierBlock.get(pixel);
       if(dist(current.x,current.y,this.x,this.y) < 25){
-        if(Math.random() > 0.8){
+        if(Math.random() > 0.3){
           current.kill();
         }
       }
