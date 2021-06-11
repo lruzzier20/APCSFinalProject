@@ -8,11 +8,11 @@ public class BarrierPixel extends Cow{
     noStroke();
     fill(color(0,255,0));
     rectMode(CENTER);
-    rect(x,y,2,2);
+    rect(x,y,3,3);
   }
   
   public boolean inArea(float otherx, float othery){
-    return otherx == this.x && othery == this.y;
+    return dist(otherx,othery,this.x,this.y) < 9;
   }
   
   public void move(){
@@ -32,8 +32,8 @@ public class BarrierPixel extends Cow{
     ArrayList<BarrierPixel> barrierBlock = block.sendList();
     for(int pixel = 0; pixel < barrierBlock.size(); pixel++){
       BarrierPixel current = barrierBlock.get(pixel);
-      if(dist(current.x,current.y,this.x,this.y) < 5){
-        if(Math.random() > 0.5){
+      if(dist(current.x,current.y,this.x,this.y) < 25){
+        if(Math.random() > 0.8){
           current.kill();
         }
       }
