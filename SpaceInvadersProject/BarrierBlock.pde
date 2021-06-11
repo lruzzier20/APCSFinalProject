@@ -2,7 +2,7 @@ public class BarrierBlock{
   private float x;
   private float y;
   private int ySize = 40;
-  private int xSize = 70;
+  private int xSize = 60;
   private ArrayList<BarrierPixel> barrierBlock = new ArrayList<BarrierPixel>();
   private Game game;
 
