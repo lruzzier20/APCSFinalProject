@@ -5,7 +5,7 @@ public class Player extends Entity{
   public Player(Game game){
     super(100,(height-25),1,game);
     image = loadImage("player.png");
-    boolean godMode = true;
+    boolean godMode = false;
     super.rateLimit = 500;
     super.lives = 3;
     if(godMode){
